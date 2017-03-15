@@ -1,4 +1,4 @@
-FROM dockerfile/ruby:2.4.0-alpine
+FROM ruby:2.4.0-alpine
 
 RUN gem install s3_website
 
