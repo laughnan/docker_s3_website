@@ -7,7 +7,7 @@ RUN apt-get install -y openjdk-7-jre-headless
 RUN apt-get -y install sudo
 
 RUN groupadd --gid 1000 node \
-  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node \
+  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
 RUN usermod -a -G sudo node
 
