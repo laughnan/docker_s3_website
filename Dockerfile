@@ -11,6 +11,8 @@ RUN groupadd --gid 1000 node \
 
 RUN usermod -a -G sudo node
 
+RUN sudo apt-get install apt-transport-https
+
 # get the information to install yarn.
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
