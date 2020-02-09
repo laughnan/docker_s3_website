@@ -11,7 +11,7 @@ RUN groupadd --gid 1000 node \
 
 RUN usermod -a -G sudo node
 
-RUN sudo apt-get install apt-transport-https
+RUN sudo apt-get -y install apt-transport-https
 
 # gpg keys listed at https://github.com/nodejs/node
 RUN set -ex \
@@ -44,7 +44,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-RUN sudo apt-get update && sudo apt-get install yarn
+RUN sudo apt-get update && sudo apt-get -y install yarn
 
 VOLUME ["/website", "/config"]
 
